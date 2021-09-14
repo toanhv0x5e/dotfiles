@@ -1,0 +1,5 @@
+# Auto select fastest mirros
+deb mirror://mirrors.ubuntu.com/mirrors.txt focal main restricted universe multiverse
+deb mirror://mirrors.ubuntu.com/mirrors.txt focal-updates main restricted universe multiverse
+deb mirror://mirrors.ubuntu.com/mirrors.txt focal-backports main restricted universe multiverse
+deb mirror://mirrors.ubuntu.com/mirrors.txt focal-security main restricted universe multiverse

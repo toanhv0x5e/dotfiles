@@ -1,0 +1,70 @@
+# software-list
+
+# browser
+firefox-esr 52
+###firefox-quantum
+goolge-chrome
+
+# email
+###thunderbird
+
+# multimedia, office
+calibre
+document-viewer
+image-viewer
+libreoffice
+###spotify
+vlc
+
+# coding
+###intellij-idea-ultimate
+visual-studio-code
+Postman
+
+# ftp, rdp
+filezilla
+remmina
+
+# virtualization
+genymotion
+virtualbox
+vmware-workstation
+
+# messenger
+###telegram
+
+# terminal
+urxvt
+
+# note text editor
+###sublime-text
+tagspaces
+
+# security
+###BurpSuite
+gpa
+keepassx
+
+# others
+###dropbox
+qbittorrent
+vym
+xarchiver # compress-extract
+video-recording
+screenshot
+
+# openvpn
+--net-tools
+network-manager
+network-manager-gnome
+
+network-manager-openvpn
+network-manager-vpnc
+network-manager-openconnect
+
+network-manager-openvpn-gnome
+network-manager-vpnc-gnome
+network-manager-openconnect-gnome
+
+sudo systemctl start NetworkManager.service
+sudo systemctl enable NetworkManager.service

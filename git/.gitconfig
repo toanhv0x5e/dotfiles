@@ -1,0 +1,10 @@
+[credential]
+    helper = cache
+[user]
+    name = toanhv0x5e
+    email = toanhv.vietnam@gmail.com
+    signingkey = 42C47EA9AC0818F4
+[email]
+    user = toanhv.vietnam@gmail.com
+[core]
+    excludesFile = ~/.config/git/ignore

@@ -1,0 +1,4 @@
+# dotfiles's ignore
+aws/*
+gpg/*
+ssh/*

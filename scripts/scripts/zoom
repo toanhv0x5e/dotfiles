@@ -1,0 +1,6 @@
+# !/bin/bash
+
+xzoom &
+sleep 1
+wmctrl -r xzoom -e 0,1920,1280,800,600
+wmctrl -r xzoom -b add,above

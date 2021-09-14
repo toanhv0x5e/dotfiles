@@ -1,0 +1,59 @@
+# General alias
+alias gnome-control-center="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
+alias msfconsole="sudo msfconsole -r $HOME/.msf4/connect_db.rb"
+alias jd-gui="java --add-opens java.base/jdk.internal.loader=ALL-UNNAMED --add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED -jar ~/dotfiles/softwares/jd-gui-1.4.0.jar"
+alias dropbox="env XDG_CURRENT_DESKTOP=Unity dropbox"
+alias evil-winrm="sudo evil-winrm"
+#alias responder="cd $HOME/Downloads/tools/windows/exploit/Responder/; sudo python3 $HOME/Downloads/tools/windows/exploit/Responder/Responder.py"
+
+# Pentest tools
+alias john="$HOME/Downloads/tools/bruteforce-tools/john/run/john"
+alias chrome="/usr/bin/google-chrome --disable-xss-auditor"
+alias google-chrome="/usr/bin/google-chrome --disable-xss-auditor"
+alias google-chrome-stable="/usr/bin/google-chrome-stable --disable-xss-auditor"
+alias frida-ps="source $HOME/.venvs/frida-tools/bin/activate; frida-ps"
+alias objection="source $HOME/.venvs/objection/bin/activate; objection"
+alias wpscan="cd $HOME/git/wpscan; source "/etc/profile.d/rvm.sh"; wpscan"
+alias responder="echo -e 'Step 1: Use kali in virtual machine\nStep 2: Connect via openvpn or brigde interface\nStep 3: Run responder inside kali vm!'"
+alias public_ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias drata-agent="sudo drata-agent --no-sandbox"
+alias wfuzz="docker run -v /usr/share/wordlists/:/usr/share/wordlists/ -it ghcr.io/xmendez/wfuzz wfuzz"
+alias wpscan="docker run -it --rm wpscanteam/wpscan"
+
+# Productive shortcut commands
+alias enableblue='pactl load-module module-alsa-sink device=btheadset && pacmd set-default-sink 1'
+alias loadbluetooth='pactl load-module module-bluetooth-discover headset=auto'
+alias git-commit='git commit -S -m'
+
+alias vi='vi'
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -la'
+alias eP='nano ~/.bashrc'
+alias eC='nano ~/.conkyrc'
+alias eD='nano ~/.config/awesome/rc.lua'
+alias redwm='cd /home/conor/abs/dwm; updpkgsums; makepkg -efi'
+alias reload='. ~/.bashrc'
+alias icons='for i in {50..255}; do  printf "\\$(printf '%03o' $i)\n" ; done'
+alias theme='gtk-chtheme'
+alias wbox='lftp whatbox'
+alias muzik='mpd && ncmpcpp'
+alias nano='nano -c'
+alias python="/usr/bin/python3"
+alias scrot="scrot -cd 5"
+
+# Misc
+alias :q="exit"
+alias c='clear'
+alias h='cd ~/'
+alias htop='htop -C'
+
+run_and_detach() {
+    echo -e "[+] Command: $1"
+    _tail="; sleep 5; bash"
+    echo -e $_tail
+    _command="$1$_tail"
+    echo -e $_command
+    screen -dm bash -c '$_command'
+    echo -e "[+] Command Run Successfully"
+}

@@ -1,0 +1,11 @@
+#=== Command History ===
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
+export HISTFILESIZE=999999999
+export PROMPT_COMMAND='history -a'
+#export HISTFILE=~/.custom_file
+
+complete -cf sudo # tab to auto-complete
+complete -cf man
+
+# Prompt
+export PS1="\u@\h:\W\$ "

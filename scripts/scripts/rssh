@@ -1,0 +1,4 @@
+#!/bin/bash
+# rssh: runs a command using the "real" ssh
+unset -f ssh
+exec "$@"

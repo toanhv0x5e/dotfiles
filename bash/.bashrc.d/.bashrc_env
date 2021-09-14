@@ -1,0 +1,13 @@
+# Current user PATH
+PATH="$PATH\
+:/usr/local/script\
+:$HOME/bin\
+:$HOME/calibre-bin/calibre"
+export PATH
+
+# Postman
+export POSTMAN_DISABLE_GPU="true"
+
+# Go
+export GOPATH=$HOME/go
+complete -W "\$(gf -list)" gf

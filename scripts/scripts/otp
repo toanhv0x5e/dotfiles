@@ -1,0 +1,46 @@
+#!/bin/sh
+
+set -eu
+
+if [ "$#" -lt "1" ]; then
+    echo "${0}: please specify path to qrcode image"
+    echo "Usage: ${0} \"path-to-qrcode-image\" [password]\n"
+    exit 1
+else 
+    if [ "$#" -eq "2" ]; then
+        password="${2}"
+    else 
+        if [ "$#" -gt "2" ]; then
+            echo "${0}: too many arguments\n"
+            exit 1
+        fi
+        # default password for toanhv2@fpt.com.vn
+        #password="not_expose_to_other"
+	password=""
+    fi
+fi
+
+echo "${0}: let use Ctrl+V to paste"
+sleep 1
+
+alias pbcopy="xclip -selection c" 2> /dev/null
+alias pbpaste="xclip -selection clipboard -o" 2> /dev/null
+
+zbarimg -q --raw "${1}" | pass otp insert totp-secret 2> /dev/null
+
+while true
+do
+    # otp code will change automacally every 30s
+    code=$(pass otp totp-secret)
+    echo "${password}${code}" > /tmp/tmp_code.txt 2> /dev/null | 
+    printf %s "$(cat /tmp/tmp_code.txt)" | pbcopy
+    clear; echo "OTP: ${code}"
+    sleep 27
+    #sleep 57
+    clear; echo "Changing."
+    sleep 1
+    clear; echo "Changing.."
+    sleep 1
+    #clear; echo "Changing..."
+    sleep 1
+done

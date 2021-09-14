@@ -1,0 +1,16 @@
+# Prevent mistake
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'
+
+# 'rm -i' prompts for every file
+alias ln='ln -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# Prevent mistake
+alias reboot='/bin/false'
+alias shutdown='/bin/false'
+alias poweroff='/bin/false'
+alias suspend='systemctl suspend'

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+#load="$(hostname -i | awk '{ print $1 }')"
+load="$(dig +short myip.opendns.com @resolver1.opendns.com 2> /dev/null)"
+
+if [ -z $load ];
+then
+  load="no internet"
+fi
+
+# full text
+echo "$load"
+
+# short text
+echo "$load"

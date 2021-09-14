@@ -1,0 +1,23 @@
+# AWS
+.aws/*
+*.pem
+
+# Keepass
+*.kdb
+*.kdbx
+
+# Remmina
+*.remmina
+remmina.pref
+
+# SSH
+id_rsa*
+id_ec*
+id_ed*
+.ssh/authorized_keys
+.ssh/aws
+.ssh/backup
+.ssh/config*
+.ssh/gpg
+.ssh/known_hosts
+.ssh/vpn
