@@ -11,3 +11,7 @@ export POSTMAN_DISABLE_GPU="true"
 # Go
 export GOPATH=$HOME/go
 complete -W "\$(gf -list)" gf
+
+# ebcli
+export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
+export GPG_TTY=$(tty)

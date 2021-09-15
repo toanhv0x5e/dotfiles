@@ -1,2 +1,7 @@
-export PATH="$HOME/.ebcli-virtual-env/executables:$PATH"
-export GPG_TTY=$(tty)
+# Fix: New tmux sessions do not source bashrc file
+if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+    fi
+fi

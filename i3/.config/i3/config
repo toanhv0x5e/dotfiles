@@ -292,9 +292,9 @@ exec_always --no-startup-id "ibus-daemon --xim -d"
 exec_always --no-startup-id "killall touchpad-indicator 2> /dev/null; /usr/bin/touchpad-indicator &"
 exec_always --no-startup-id "killall nm-applet 2> /dev/null; /usr/bin/nm-applet &"
 #exec_always --no-startup-id "killall screen 2> /dev/null; screen -dmS ssh_local_sock bash -c 'echo \"Activate local socks\"; ssh -D 8081 toan@127.0.0.1 -p 22'"
-#exec_always --no-startup-id "/usr/bin/slimbookbattery &"
 exec_always --no-startup-id  "xautolock -time 10 -locker '$HOME/.config/i3/i3lock-fancy-multimonitor/lock'"
 exec_always --no-startup-id  "killall pasystray 2> /dev/null; pasystray &"
+exec_always --no-startup-id  "killall drata-agent 2> /dev/null; drata-agent &"
 
 # scrot & gimp - root
 bindsym Print exec scrot -e 'mv $f /home/toan/Downloads'

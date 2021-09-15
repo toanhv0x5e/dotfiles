@@ -1,6 +1,6 @@
 #!/bin/sh
 lock() {
-    "$HOME/.config/i3/i3lock-fancy-multimonitor/lock"
+    "/usr/local/bin/lock"
 }
 
 case "$1" in
