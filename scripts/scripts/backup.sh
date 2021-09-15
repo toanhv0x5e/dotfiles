@@ -2,7 +2,7 @@
 # Script to compress current dotfiles directory to tar file located in $HOME/backup.
 
 _pwd="$(pwd)"
-_filename="$(echo "dotfile_"`date +"%Y-%m-%d_%H.%M.%S"`)"
+_filename="$(echo "dotfiles_"`date +"%Y-%m-%d_%H.%M.%S"`)"
 
 function backup {
     mkdir -p $HOME/backup 2>/dev/null

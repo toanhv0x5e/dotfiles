@@ -5,6 +5,9 @@ set -e
 # Auto select fastest mirros
 sudo cp ./sources.list /etc/apt/sources.list
 
+# Set time in US format
+sudo localectl set-locale LC_TIME=en_US.utf8
+
 # Ensure everything latest
 sudo apt update && sudo apt upgrade -y
 
@@ -57,6 +60,7 @@ for i in $_softwares
 done
 
 # Install via Snap
+sudo snap install dbeaver-ce
 sudo snap install slack --classic
 sudo snap install spotify
 sudo snap install skype
