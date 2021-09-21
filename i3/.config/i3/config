@@ -295,6 +295,7 @@ exec_always --no-startup-id "killall nm-applet 2> /dev/null; /usr/bin/nm-applet 
 exec_always --no-startup-id  "xautolock -time 10 -locker '$HOME/.config/i3/i3lock-fancy-multimonitor/lock'"
 exec_always --no-startup-id  "killall pasystray 2> /dev/null; pasystray &"
 exec_always --no-startup-id  "killall drata-agent 2> /dev/null; drata-agent &"
+exec_always --no-startup-id  "killall compton 2> /dev/null; compton -f -b"
 
 # scrot & gimp - root
 bindsym Print exec scrot -e 'mv $f /home/toan/Downloads'

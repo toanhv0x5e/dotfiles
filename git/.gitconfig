@@ -8,3 +8,5 @@
     user = toanhv.vietnam@gmail.com
 [core]
     excludesFile = ~/.config/git/ignore
+[commit]
+    gpgSign = true

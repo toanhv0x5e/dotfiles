@@ -1,7 +1,9 @@
 # Drata Agent
-cd $HOME/Downloads/
-[ -f "$HOME/Downloads/drata-agent-3.0.0.deb" ] || wget https://cdn.drata.com/agent/dist/linux/drata-agent-3.0.0.deb
-sudo apt install ./drata-agent-3.0.0.deb
+if [ "$(which drata-agent)" = "" ]; then
+  cd $HOME/Downloads/
+  [ -f "$HOME/Downloads/drata-agent-3.0.0.deb" ] || wget https://cdn.drata.com/agent/dist/linux/drata-agent-3.0.0.deb
+  sudo apt install ./drata-agent-3.0.0.deb
+fi
 
 # JumpCloud Agent
 read -sp 'Connect Key: ' _connect_key

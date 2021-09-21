@@ -15,6 +15,7 @@ sudo apt update && sudo apt upgrade -y
 _softwares="\
   apt-transport-https \
   clamtk \
+  compton \
   curl \
   flameshot \
   feh \
@@ -43,7 +44,6 @@ _softwares="\
   snap \
   screen \
   stow \
-  telegram-desktop \
   thunderbird \
   tmux \
   virtualbox \
@@ -64,8 +64,16 @@ sudo snap install dbeaver-ce
 sudo snap install slack --classic
 sudo snap install spotify
 sudo snap install skype
+sudo snap install speedtest-cli
 sudo snap install yubioath-desktop
 sudo snap install wps-office-all-lang-no-internet
+
+# ybacklight
+cd $HOME/Downloads/
+[ -d "$HOME/Downloads/ybacklight" ] || git clone https://github.com/szekelyszilv/ybacklight.git
+cd ybacklight/src
+sudo gcc ybacklight.c -o /usr/bin/ybacklight
+echo "${USER} ALL=NOPASSWD: /usr/bin/ybacklight" | sudo tee /etc/sudoers.d/ybacklight > /dev/null
 
 # touchpad-indicator
 sudo add-apt-repository ppa:atareao/atareao -y
@@ -86,6 +94,12 @@ cd $HOME/Downloads/
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt update && sudo apt install sublime-text -y
+
+# Telegram desktop
+cd $HOME/Downloads/
+[ -f "$HOME/Downloads/tsetup.3.0.1.tar.xz" ] || wget https://updates.tdesktop.com/tlinux/tsetup.3.0.1.tar.xz
+tar -xf tsetup.3.0.1.tar.xz -C . 
+ln -sf $HOME/Downloads/Telegram/Telegram /usr/bin/telegram-desktop
 
 # Skype
 #cd $HOME/Downloads/
