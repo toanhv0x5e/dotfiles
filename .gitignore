@@ -3,3 +3,4 @@ aws/*
 gpg/*
 ssh/*
 python-venvs/*
+genymotion/*

@@ -1,4 +1,5 @@
 # General alias
+alias dmidecode="sudo dmidecode"
 alias gnome-control-center="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
 alias msfconsole="sudo msfconsole -r $HOME/.msf4/connect_db.rb"
 alias jd-gui="java --add-opens java.base/jdk.internal.loader=ALL-UNNAMED --add-opens jdk.zipfs/jdk.nio.zipfs=ALL-UNNAMED -jar ~/dotfiles/softwares/jd-gui-1.4.0.jar"
@@ -16,14 +17,16 @@ alias objection="source $HOME/.venvs/objection/bin/activate; objection"
 alias wpscan="cd $HOME/git/wpscan; source "/etc/profile.d/rvm.sh"; wpscan"
 alias responder="echo -e 'Step 1: Use kali in virtual machine\nStep 2: Connect via openvpn or brigde interface\nStep 3: Run responder inside kali vm!'"
 alias public_ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias drata-agent="sudo drata-agent --no-sandbox"
+#alias drata-agent="sudo drata-agent --no-sandbox"
 alias wfuzz="docker run -v /usr/share/wordlists/:/usr/share/wordlists/ -it ghcr.io/xmendez/wfuzz wfuzz"
 alias wpscan="docker run -it --rm wpscanteam/wpscan"
+alias nmap="nmap --spoof-mac Cisco --scan-delay 1s"
 
 # Productive shortcut commands
 alias enableblue='pactl load-module module-alsa-sink device=btheadset && pacmd set-default-sink 1'
 alias loadbluetooth='pactl load-module module-bluetooth-discover headset=auto'
 alias git-commit='git commit -S -m'
+alias git-empty='git commit --allow-empty -m "Trigger Build"'
 
 alias vi='vi'
 alias ls='ls --color=auto'
@@ -47,6 +50,7 @@ alias :q="exit"
 alias c='clear'
 alias h='cd ~/'
 alias htop='htop -C'
+alias hgrep='history | grep --color=auto '
 
 run_and_detach() {
     echo -e "[+] Command: $1"

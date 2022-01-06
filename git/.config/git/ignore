@@ -21,3 +21,4 @@ id_ed*
 .ssh/gpg
 .ssh/known_hosts
 .ssh/vpn
+.idea

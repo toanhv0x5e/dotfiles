@@ -16,3 +16,9 @@ if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
         fi
     fi
 fi
+
+PATH="/home/toan/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/toan/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/toan/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/toan/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/toan/perl5"; export PERL_MM_OPT;

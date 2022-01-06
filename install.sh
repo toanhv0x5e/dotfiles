@@ -20,6 +20,7 @@ _softwares="\
   flameshot \
   feh \
   filezilla \
+  fping \
   git \
   gitk \
   gpa \
@@ -28,9 +29,13 @@ _softwares="\
   i3blocks \
   ibus-unikey \
   imagemagick \
+  inetutils-traceroute \
+  insync-nautilus \
   keepassxc \
   libpam-u2f \
-  inetutils-traceroute \
+  nautilus-dropbox \
+  nmap \
+  postgresql-client-common \
   playerctl \
   pavucontrol \
   pasystray \
@@ -60,6 +65,7 @@ for i in $_softwares
 done
 
 # Install via Snap
+sudo snap install code --classic
 sudo snap install dbeaver-ce
 sudo snap install slack --classic
 sudo snap install spotify
@@ -101,11 +107,6 @@ cd $HOME/Downloads/
 tar -xf tsetup.3.0.1.tar.xz -C . 
 ln -sf $HOME/Downloads/Telegram/Telegram /usr/bin/telegram-desktop
 
-# Skype
-#cd $HOME/Downloads/
-#[ -f "$HOME/Downloads/skypeforlinux-64.deb" ] || wget https://repo.skype.com/latest/skypeforlinux-64.deb
-#sudo apt install ./skypeforlinux-64.deb
-
 # 1Password
 curl -sS https://downloads.1password.com/linux/keys/1password.asc \
   | sudo gpg --batch --yes --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
@@ -131,17 +132,16 @@ cd $HOME/Downloads/
 [ -f "$HOME/Downloads/teamviewer_amd64.deb" ] || wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 sudo apt install ./teamviewer_amd64.deb
 
-# Dropbox
-cd $HOME/Downloads/
-cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-sudo apt install nautilus-dropbox -y
-#~/.dropbox-dist/dropboxd
-
 # Virtualbox
 cd $HOME/Downloads/
 vboxversion=$(wget -qO - https://download.virtualbox.org/virtualbox/LATEST.TXT)
 wget "https://download.virtualbox.org/virtualbox/${vboxversion}/Oracle_VM_VirtualBox_Extension_Pack-${vboxversion}.vbox-extpack"
 yes | sudo vboxmanage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-${vboxversion}.vbox-extpack
+
+# Teraform
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main" -y
+sudo apt-get update && sudo apt-get install terraform -y
 
 # Remove existing file
 [ -f "$HOME/.bashrc" ] && rm $HOME/.bashrc
@@ -158,11 +158,12 @@ for i in $_list
   do stow --verbose=2 $i
 done
 
-# Register a Yubikey. Manual is required.
-#sudo apt-get install libpam-u2f -y
-#mkdir -p ~/.config/Yubico
-#pamu2fcfg > ~/.config/Yubico/u2f_keys
-#pamu2fcfg -n >> ~/.config/Yubico/u2f_keys
+# Register a new Yubikey manually.
+# Add primary security key
+# mkdir -p ~/.config/Yubico
+# pamu2fcfg > ~/.config/Yubico/u2f_keys
+# Add secondary security key
+# pamu2fcfg -n >> ~/.config/Yubico/u2f_keys
 
 # Create symlinks
 sudo ln -sf $HOME/scripts/bing-wallpaper /usr/local/bin/
