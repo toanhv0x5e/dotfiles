@@ -27,6 +27,7 @@ alias enableblue='pactl load-module module-alsa-sink device=btheadset && pacmd s
 alias loadbluetooth='pactl load-module module-bluetooth-discover headset=auto'
 alias git-commit='git commit -S -m'
 alias git-empty='git commit --allow-empty -m "Trigger Build"'
+alias dns-get='systemd-resolve --status'
 
 alias vi='vi'
 alias ls='ls --color=auto'
