@@ -2,7 +2,7 @@
 # author: Whizzzkid (me@nishantarora.in)
 
 # Base URL.
-bing="http://www.bing.com"
+bing="https://bing.com"
 
 # API end point.
 api="/HPImageArchive.aspx?"
@@ -13,17 +13,18 @@ format="&format=js"
 # For day (0=current; 1=yesterday... so on).
 day="&idx=0"
 
-# Market for image.
-market="&mkt=en-CA"
+# Market for image. en-AU/de-CH/en-GB/en-US/en-SG
+market="&mkt=en-SG"
 
 # API Constant (fetch how many).
-const="&n=1"
+const="&n=2"
 
 # Image extension.
 extn=".jpg"
 
 # Size.
-size="1920x1200"
+#size="1920x1200"
+size="2560x1080"
 
 # Collection Path.
 path="$HOME/Pictures/Bing/"

@@ -21,6 +21,10 @@ alias public_ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias wfuzz="docker run -v /usr/share/wordlists/:/usr/share/wordlists/ -it ghcr.io/xmendez/wfuzz wfuzz"
 alias wpscan="docker run -it --rm wpscanteam/wpscan"
 alias nmap="nmap --spoof-mac Cisco --scan-delay 1s"
+alias bettercap="docker run -it --privileged --net=host -v /home/toan/Downloads/bettercap-data/:/root bettercap/bettercap"
+alias ssh_local_sock="killall screen 2> /dev/null; screen -dmS ssh_local_sock bash -c 'echo \"Activate local socks\"; ssh -D 8081 kali@13.214.94.33 -i ~/.ssh/aws/aws-test2.pem -p 22'"
+alias gam="/home/toan/bin/gamadv-xtd3/gam"
+
 
 # Productive shortcut commands
 alias enableblue='pactl load-module module-alsa-sink device=btheadset && pacmd set-default-sink 1'

@@ -5,6 +5,11 @@ PATH="$PATH\
 :$HOME/calibre-bin/calibre"
 export PATH
 
+# aws-utils
+for p in /home/toan/Downloads/k-source/aws-utils/*; do
+    [ -f ${p}/README.md ] && export PATH=$PATH:$p
+done
+
 # Postman
 export POSTMAN_DISABLE_GPU="true"
 
