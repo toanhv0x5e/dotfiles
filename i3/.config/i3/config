@@ -270,10 +270,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Shortcut software
-bindsym Mod1+shift+f exec "/usr/lib/firefox/firefox"
-bindsym Mod1+shift+g exec "/usr/lib/firefox/firefox --ProfileManager --new-instance"
+bindsym Mod1+shift+f exec "/usr/bin/firefox"
+bindsym Mod1+shift+g exec "/usr/bin/firefox --ProfileManager --new-instance"
 bindsym Mod1+shift+c exec "google-chrome"
-bindsym Mod1+l exec "$HOME/.config/i3/scripts/lock-screen"
+bindsym Mod1+l exec "/usr/local/bin/lock"
 bindsym Mod1+shift+n exec "/usr/bin/nautilus"
 bindsym Mod1+shift+e exec "/snap/bin/subl"
 bindsym Mod1+shift+t exec "/usr/bin/thunderbird"
@@ -291,11 +291,11 @@ exec_always --no-startup-id "ibus-daemon --xim -d"
 #exec --no-startup-id "$HOME/scripts/toggle-touchpad.sh 2> /dev/null"
 exec_always --no-startup-id "killall touchpad-indicator 2> /dev/null; /usr/bin/touchpad-indicator &"
 exec_always --no-startup-id "killall nm-applet 2> /dev/null; /usr/bin/nm-applet &"
-#exec_always --no-startup-id "killall screen 2> /dev/null; screen -dmS ssh_local_sock bash -c 'echo \"Activate local socks\"; ssh -D 8081 toan@127.0.0.1 -p 22'"
-exec_always --no-startup-id  "xautolock -time 10 -locker '$HOME/.config/i3/scripts/lock-screen'"
-exec_always --no-startup-id  "killall pasystray 2> /dev/null; pasystray &"
-exec_always --no-startup-id  "killall drata-agent 2> /dev/null; drata-agent &"
-exec_always --no-startup-id  "killall compton 2> /dev/null; compton -f -b"
+#exec_always --no-startup-id "killall screen 2> /dev/null; screen -dmS ssh_local_sock bash -c 'echo \"Activate local socks\"; ssh -D 8081 kali@13.214.94.33 -i ~/.ssh/aws/aws-test2.pem -p 22'"
+exec_always --no-startup-id "xautolock -time 10 -locker '/usr/local/bin/lock'"
+exec_always --no-startup-id "killall pasystray 2> /dev/null; pasystray &"
+exec_always --no-startup-id "killall drata-agent 2> /dev/null; drata-agent &"
+exec_always --no-startup-id "killall compton 2> /dev/null; compton -f -b"
 
 # scrot & gimp - root
 bindsym Print exec scrot -e 'mv $f /home/toan/Downloads'
@@ -339,4 +339,4 @@ bindsym Mod1+Print exec scrot -s -e 'mv $f /home/toan/Downloads'
 #exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 
 # Fix Bluetooth doesn’t display pin code for pairing
-exec --no-startup-id gsettings set org.blueman.general notification-daemon false
+exec_always --no-startup-id  "gsettings set org.blueman.general notification-daemon false"
